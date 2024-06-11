@@ -121,7 +121,7 @@ body
     height: 28px;
     width: 100px;
 }
-@media screen and (max-width:400px) {
+@media screen and (max-width:600px) {
     #page1
     {
         display: flex;
