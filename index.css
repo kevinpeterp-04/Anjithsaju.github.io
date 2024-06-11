@@ -95,11 +95,12 @@ body
     border: none;
     font-family: cursive;
     text-align: center;
-    /* display: grid; */
+    display: grid; 
     place-items: end start;
     font-weight: 400;
     align-items: end;
     justify-items: center;
+    color: transparent;
 }
 #page2
 {
@@ -115,8 +116,81 @@ body
 
 .p2.active
 {
-    background: none;
+    background: white;
     background-color: white;
     height: 28px;
     width: 100px;
+}
+@media screen and (max-width:400px) {
+    #page1
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .pg2
+    {display: flex;
+        flex-direction: column;}
+    .p1{
+         height: 190px;
+        width: 200px;
+    }
+    body{
+        display: flex;
+    }
+    .p2{
+       
+        width: 150px;
+        height: 150px;
+        color: black;
+        font-weight: 500;
+    }
+    .p2.active
+{
+    background: white;
+    background-color: white;
+    height: 28px;
+    width: 76px;
+    margin: 5px;
+}
+.pg2.active
+{
+    display: flex;
+    flex-direction: row;
+}
+}
+#b1
+{
+    background: url(breakfast.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b2
+{
+    background: url(lunch.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b3
+{
+    background: url(dinner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b4
+{
+    background: url(snacks.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b5
+{
+    background: url(bus.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b6
+{
+    background: url(other.jpg);
+    background-size: cover;
+    background-position: center;
 }
