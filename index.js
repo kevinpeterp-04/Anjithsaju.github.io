@@ -8,6 +8,7 @@ const page2=document.getElementById("page2");
 const page3=document.getElementById("page3");
 const wrapper= document.querySelectorAll('.p2');
 const pg2=document.querySelector('.pg2');
+const split=document.getElementById("split");
 page2.style.display="none";
 page3.style.display="none";
 back.style.display="none";
@@ -16,10 +17,13 @@ bt1.addEventListener("click",trans2);
 bt2.addEventListener("click",trans2);
 back.addEventListener("click",backfn);
 bfood.addEventListener("click",trans3);
+split.addEventListener("click",trans1);
+console.log(wrapper);
+
 function trans2()
 {
     wrapper.forEach(element => {
-        
+        element.style.background="";
         element.classList.remove('active');
     });
     pg2.classList.remove('active');
@@ -43,8 +47,9 @@ function trans1()
 function trans3()
 {
     bk=3;
+    bfood.style.background="white";
     wrapper.forEach(element => {
-        
+        element.style.background="white";
         element.classList.add('active');
     });
     pg2.classList.add('active');
