@@ -133,6 +133,8 @@ body
     .p1{
          height: 190px;
         width: 200px;
+        color: #fffbfb;
+        font-size: 11px;
     }
     body{
         display: flex;
@@ -143,6 +145,14 @@ body
         height: 150px;
         color: black;
         font-weight: 500;
+    }
+    #page3
+    {
+        width:375px;
+    }
+    #Members
+    {
+        font-size: 12px;
     }
     .p2.active
 {
