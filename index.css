@@ -156,9 +156,9 @@ body
     .pg2
     {display: grid;
         grid-auto-flow: column;
-        grid-auto-columns: 80%;
-        width: 400px;
+        grid-auto-columns: 25%;
         overflow-x: auto;
+     width:300px;
         overscroll-behavior-inline: contain;
     }
 
