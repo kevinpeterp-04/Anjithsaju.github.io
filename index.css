@@ -58,7 +58,7 @@ body
     display: grid;
     place-items: end start;
     font-weight: 400;
-    color: transparent;
+    color: rgb(134 105 117);
     align-items: end;
     justify-items: center;
 }
@@ -79,10 +79,32 @@ body
     background-size: cover;
     background-position: center;
 }
+#back
+{
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    width: 104px;
+    height: 39px;
+    border: none;
+   
+    border-radius: 20px;
+}
+#split
+{
+    background-color: white;
+    color: black;
+    font-weight: 400;
+    width: 96px;
+    height: 30px;
+    border: none;
+   
+    border-radius: 20px;
+}
 .p1:hover
 {
     border: 3px solid rgba(241, 242, 243, 0.2);
-    color: rgb(134 105 117);
+    
     font-weight: 800;
     font-family: cursive;
 }
@@ -95,28 +117,128 @@ body
     border: none;
     font-family: cursive;
     text-align: center;
-    /* display: grid; */
+    display: grid; 
     place-items: end start;
     font-weight: 400;
     align-items: end;
     justify-items: center;
+    color: rgb(134 105 117);
 }
-#page2
+.pg2
 {
-    display: flex;
+           /* margin-left: 1117px; */
+           display: grid;
+           
+    
 }
 .p2:hover:hover
 {
     border: 3px solid rgba(241, 242, 243, 0.2);
-    color: rgb(134 105 117);
+   
     font-weight: 800;
     font-family: cursive;
 }
 
 .p2.active
 {
-    background: none;
+    background: white;
     background-color: white;
     height: 28px;
     width: 100px;
+}
+@media screen and (max-width:400px) {
+    #page1
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .pg2
+    {display:grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 25%;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+
+    .p1{
+         height: 190px;
+        width: 200px;
+       
+        font-size: 11px;
+    }
+    body{
+        display: flex;
+    }
+    .p2{
+       
+        width: 150px;
+        height: 150px;
+        color: black;
+        font-weight: 500;
+    }
+    #page3
+    {
+        width:375px;
+    }
+    #Members
+    {
+        font-size: 12px;
+    }
+    .p2.active
+{
+    background: white;
+    background-color: white;
+    height: 28px;
+    width: 76px;
+    margin: 5px;
+}
+.pg2.active
+{
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.page2n
+{
+    display: flex;
+}
+
+}
+
+#b1
+{
+    background: url(breakfast.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#b2
+{
+    background: url(lunch.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b3
+{
+    background: url(dinner.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b4
+{
+    background: url(snacks.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b5
+{
+    background: url(bus.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#b6
+{
+    background: url(other.jpg);
+    background-size: cover;
+    background-position: center;
 }
