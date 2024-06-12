@@ -127,7 +127,8 @@ body
 .pg2
 {
            /* margin-left: 1117px; */
-           display: grid;
+          display: grid;
+          grid-auto-flow: column;
            
     
 }
@@ -153,9 +154,10 @@ body
         flex-direction: column;
     }
     .pg2
-    {display:grid;
+    {display: grid;
         grid-auto-flow: column;
-        grid-auto-columns: 25%;
+        grid-auto-columns: 80%;
+        width: 400px;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
     }
@@ -171,8 +173,11 @@ body
     }
     .p2{
        
-        width: 150px;
-        height: 150px;
+        margin: 55px;
+        /* margin-right: 67px; */
+        /* border: 10px; */
+        width: 284px;
+        height: 287px;
         color: black;
         font-weight: 500;
     }
@@ -194,6 +199,7 @@ body
 }
 .pg2.active
 {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
