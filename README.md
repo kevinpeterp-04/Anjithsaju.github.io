@@ -31,3 +31,6 @@ after entering all the details
 press split
 all your information will be saved in database 
 all expenses will be updated and amounts will be automatically tallied between members
+
+
+You can view the page from here:https://anjithsaju.github.io/
