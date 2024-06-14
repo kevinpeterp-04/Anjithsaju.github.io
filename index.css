@@ -157,7 +157,7 @@ body
     {display: grid;
         grid-auto-flow: column;
         grid-auto-columns: 80%;
-        width: 400px;
+        width: 365px;
         overflow-x: auto;
         overscroll-behavior-inline: contain;
     }
@@ -173,11 +173,11 @@ body
     }
     .p2{
        
-        margin: 55px;
+        margin: 73px;
         /* margin-right: 67px; */
         /* border: 10px; */
-        width: 284px;
-        height: 287px;
+        width: 234px;
+        height: 238px;
         color: black;
         font-weight: 500;
     }
