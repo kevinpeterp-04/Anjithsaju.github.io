@@ -113,7 +113,7 @@ async function datapush(userData,url) {
         }
 
         const result = await response.json();
-        alert("User registered successfully");
+        alert("Data  saved successfully");
         
     } catch (error) {
         console.error('Error registering user:', error);
