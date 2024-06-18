@@ -1,0 +1,13 @@
+let bno=0;
+const bfood1=document.getElementById("b1");
+const bfood2=document.getElementById("b2");
+const bfood3=document.getElementById("b3");
+const bfood4=document.getElementById("b4");
+const bfood5=document.getElementById("b5");
+const bfood6=document.getElementById("b6");
+bfood1.addEventListener("click",()=>{ trans3();bfood1.style.background="lightblue";bno=1;});
+bfood2.addEventListener("click",()=>{ trans3();bfood2.style.background="lightblue";bno=2;});
+bfood3.addEventListener("click",()=>{ trans3();bfood3.style.background="lightblue";bno=3;});
+bfood4.addEventListener("click",()=>{ trans3();bfood4.style.background="lightblue";bno=4;});
+bfood5.addEventListener("click",()=>{ trans3();bfood5.style.background="lightblue";bno=5;});
+bfood6.addEventListener("click",()=>{ trans3();bfood6.style.background="lightblue";bno=6;});

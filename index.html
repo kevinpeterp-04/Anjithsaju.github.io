@@ -24,7 +24,7 @@
     <div id="page3">
       <div id="slide">
         <h5>Enter Expense:</h5>
-        <input type="text" id="expense" placeholder="Expense" required />
+        <input type="number" id="expense" placeholder="Expense" required />
       </div>
       <div id="slide">
         <div id="inner">
@@ -47,11 +47,12 @@
       </div>
       <div id="slide">
         <h5>Select Date:</h5>
-        <input type="date" />
+        <input type="date" id="date" />
       </div>
       <div id="slide">
         <h5>Paid By:</h5>
-        <select>
+        <select id="nameSelect">
+          <option>none</option>
           <option>anjith</option>
           <option>chriswin</option>
           <option>adith</option>
