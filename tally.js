@@ -1,54 +1,61 @@
-let chris={
+
+let Chriswin={
     pid:101,
-    anj:800,
-    adi:100,
-    kev:70,
-    ric:300,
-    and:55
+    Anjith:0,
+    Adith:0,
+    Kevin:0,
+    Richol:0,
+    Anadhakrishnan:0
 };
 
-let kev={
-    pid:102,
-    anj:90,
-    adi:500,
-    chris:80,
-    ric:30,
-    and:90
+let Kevin={
+    pid:0,
+    Anjith:0,
+    Adith:0,
+    Chriswin:0,
+    Richol:0,
+    Anadhakrishnan:0
 }
-let anj={
-    pid:103,
-    kev:20,
-    adi:900,
-    chris:9,
-    ric:500,
-    and:22
+let Anjith={
+    pid:0,
+    Kevin:0,
+    Adith:0,
+    Chriswin:0,
+    Richol:0,
+    Anadhakrishnan:0
 }
-let adi={
-    pid:104,
-    anj:988,
-    kev:300,
-    chris:700,
-    ric:80,
-    and:22
+let Adith={
+    pid:0,
+    Anjith:0,
+    Kevin:0,
+    Chriswin:0,
+    Richol:0,
+    Anadhakrishnan:0
 }
-let ric={
-    pid:105,
-    anj:80,
-    adi:30,
-    chris:800,
-    kev:330,
-    and:234
+let Richol={
+    pid:0,
+    Anjith:0,
+    Adith:0,
+    Chriswin:0,
+    Kevin:0,
+    Anadhakrishnan:0
 }
-let and={
-    pid:106,
-    anj:987,
-    adi:90,
-    chris:348,
-    ric:233,
-    kev:2000
+let Anadhakrishnan={
+    pid:0,
+    Anjith:0,
+    Adith:0,
+    Chriswin:0,
+    Richol:0,
+    Kevin:0
 }
 
-const data={chris,kev,anj,and,adi,ric};
+//const data={Chriswin,Kevin,Anjith,Anadhakrishnan,Adith,Richol};
+//datapush(data,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/memeberdatapush")
+
+
+
+
+
 function tally(person,name)
 {
    // console.log(person);
@@ -93,22 +100,22 @@ for(i=1;i<l;i++)
     }
 }
 console.log("before");
-console.log("adi",adi);
-console.log("chris",chris);
-console.log("kev",kev);
-console.log("ric",ric);
-console.log("anj",anj);
-console.log("and",and);
-tally(adi,"adi");
-tally(anj,"anj");
-tally(kev,"kev");
-tally(and,"and");
-tally(ric,"ric");
-tally(chris,"chris");
+console.log("Adith",Adith);
+//console.log("chris",chris);
+//console.log("kev",kev);
+// console.log("ric",ric);
+// console.log("anj",anj);
+// console.log("and",and);
+tally(Adith,"Adith");
+// tally(anj,"anj");
+// tally(kev,"kev");
+// tally(and,"and");
+// tally(ric,"ric");
+// tally(chris,"chris");
 console.log("after");
-console.log("adi",adi);
-console.log("chris",chris);
-console.log("kev",kev);
-console.log("ric",ric);
-console.log("anj",anj);
-console.log("and",and);
+console.log("adi",Adith);
+// console.log("chris",chris);
+// console.log("kev",kev);
+// console.log("ric",ric);
+// console.log("anj",anj);
+// console.log("and",and);
