@@ -53,7 +53,7 @@ let Anadhakrishnan={
 //datapush(data,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/memeberdatapush")
 
 
-
+https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate
 
 
 function tally(person,name)
