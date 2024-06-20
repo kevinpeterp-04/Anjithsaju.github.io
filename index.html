@@ -23,48 +23,51 @@
         <button type="button" class="p2" id="b6">Other</button>
       </div>
     </div>
-    <div id="page3">
-      <div id="slide">
-        <h5>Enter Expense:</h5>
-        <input type="number" id="expense" placeholder="Expense" required />
-      </div>
-      <div id="slide">
-        <div id="inner">
-          <h5>Select Members</h5>
-          <div id="Members">
-            <input type="checkbox" />
-            <p>Anjith</p>
-            <input type="checkbox" />
-            <p>Chriswin</p>
-            <input type="checkbox" />
-            <p>Kevin</p>
-            <input type="checkbox" />
-            <p>Adith</p>
-            <input type="checkbox" />
-            <p>Richol</p>
-            <input type="checkbox" />
-            <p>Anadhakrishnan</p>
+    <form id="myForm">
+      <div id="page3">
+        <div id="slide">
+          <h5>Enter Expense:</h5>
+          <input type="number" id="expense" placeholder="Expense" required />
+        </div>
+        <div id="slide">
+          <div id="inner">
+            <h5>Select Members</h5>
+            <div id="Members">
+              <input type="checkbox" />
+              <p>Anjith</p>
+              <input type="checkbox" />
+              <p>Chriswin</p>
+              <input type="checkbox" />
+              <p>Kevin</p>
+              <input type="checkbox" />
+              <p>Adith</p>
+              <input type="checkbox" />
+              <p>Richol</p>
+              <input type="checkbox" />
+              <p>Anadhakrishnan</p>
+            </div>
           </div>
         </div>
+        <div id="slide">
+          <h5>Select Date:</h5>
+          <input type="date" id="date" />
+        </div>
+        <div id="slide">
+          <h5>Paid By:</h5>
+          <select id="nameSelect">
+            <option>none</option>
+            <option>Anjith</option>
+            <option>Chriswin</option>
+            <option>Adith</option>
+            <option>Kevin</option>
+            <option>Anadhakrishnan</option>
+            <option>Richol</option>
+          </select>
+        </div>
+
+        <button type="submit" id="split">Split</button>
       </div>
-      <div id="slide">
-        <h5>Select Date:</h5>
-        <input type="date" id="date" />
-      </div>
-      <div id="slide">
-        <h5>Paid By:</h5>
-        <select id="nameSelect">
-          <option>none</option>
-          <option>Anjith</option>
-          <option>Chriswin</option>
-          <option>Adith</option>
-          <option>Kevin</option>
-          <option>Anadhakrishnan</option>
-          <option>Richol</option>
-        </select>
-      </div>
-      <button type="click" id="split">Split</button>
-    </div>
+    </form>
     <button type="button" id="back">Back</button>
     <script src="index.js"></script>
   </body>

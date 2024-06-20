@@ -19,11 +19,11 @@ bt1.addEventListener("click",trans2);
 bt2.addEventListener("click",trans2);
 back.addEventListener("click",backfn);
 
-split.addEventListener("click",()=>
-    {
-        trans1();
-    spliting()});
-console.log(wrapper);
+// split.addEventListener("click",()=>
+//     {
+//         trans1();
+//     spliting()});
+// console.log(wrapper);
 
 
 //transitions******************************************************************************************************
@@ -163,6 +163,7 @@ console.log(wrapper);
         
             
             } catch (error) {
+                alert("database not connected please refresh");
             console.error('Error:', error);
             }
         };
@@ -314,3 +315,13 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             }
 
 //******************************************************************************************
+document.getElementById('myForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    console.log("hello thin swork") ;
+    trans1();
+   spliting();
+    // console.log(wrapper)// Prevent the default form submission
+    // Your form submission code here (e.g., AJAX request)
+    // After processing the form, clear the inputs
+    this.reset();
+});
