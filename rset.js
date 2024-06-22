@@ -27,6 +27,7 @@ const button = document.getElementById("reset");
             throw new Error(`HTTP error! Status: ${response.status}`);
           }
           alert("data reseted");
+          location.replace("https://anjithsaju.github.io/");
         } catch (error) {
           console.error("Error:", error);
         }
