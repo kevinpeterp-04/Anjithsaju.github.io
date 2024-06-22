@@ -1,5 +1,4 @@
-const msg=document.getElementById("dbmsg");
-msg.style.display="none";
+
 console.log("hello");
 const bt1=document.getElementById("s1");
 const bt2=document.getElementById("v1");
@@ -7,7 +6,7 @@ let database=null;
 const back=document.getElementById("back");
 const page1=document.getElementById("page1");
 const page2=document.getElementById("page2");
-const page3=document.getElementById("page3");
+const page3=document.querySelector(".page3");
 const wrapper= document.querySelectorAll('.p2');
 const pg2=document.querySelector('.pg2');
 const split=document.getElementById("split");
@@ -18,6 +17,39 @@ let bk=1;
 bt1.addEventListener("click",trans2);
 bt2.addEventListener("click",trans2);
 back.addEventListener("click",backfn);
+let jk=0;
+let expensedetails=null;
+let individualdetails=null;
+const mother=document.getElementById("mother");
+const twin=document.querySelectorAll(".twin");
+const tbtn=document.getElementById("btwin");
+console.log(twin);
+tbtn.addEventListener("click",twinftn);
+let mani=1;
+function twinftn()
+{
+    
+    if(mani==1)
+        {
+            twin.forEach(element => {
+                element.style.display="flex";
+            
+            });
+            page3.classList.add('active');
+    mother.style.display="none";
+    mani=0;
+        }
+        else
+        {
+            mani=1;
+            twin.forEach(element => {
+                element.style.display="none";
+            
+            });
+            page3.classList.remove('active');
+            mother.style.display="";
+        }
+}
 
 // split.addEventListener("click",()=>
 //     {
@@ -44,6 +76,7 @@ back.addEventListener("click",backfn);
                     }
                     function trans1()
                     {
+                        
                         back.style.display="none";
                         page2.style.display="none";
                         page1.style.display="";
@@ -96,12 +129,15 @@ back.addEventListener("click",backfn);
                 }
                 const datathis=await response.json();
                 //console.log(datathis);
-                database =datathis["DataOF"];
-                
+                const dataprev =datathis["DataOF"];
+                database=dataprev["Tally"];
+                expensedetails=dataprev["Expenses"];
+                individualdetails=dataprev["IDetails"];
+                console.log(dataprev);
                 console.log(database);
             }
             catch (error) {
-                console.error('Error registering user:', error);
+                alert("Cant connect to Database please Reload :)");
             }
         }
 
@@ -186,7 +222,7 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                      eventname=event.target.innerText;
                     console.log(eventname);
                     const bid=document.getElementById(selectedbutton);
-                    trans3()
+                    trans3();
                     bid.style.background="lightblue";
 
                 });
@@ -196,11 +232,18 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
 
 //page 3 functions
 
-                const namedrop= document.getElementById('nameSelect');//selectdrop down
+                const namedrop= document.getElementById('nameSelect');//selectdrop down normal
                 let selectedname=null;
                 namedrop.addEventListener('change', function(event) {selectedname = event.target.value;});
+                const twin1= document.getElementById('nameSelecttwin1');//selectdrop down twin 1
+                let twin1name=null;
+                twin1.addEventListener('change', function(event) {twin1name = event.target.value;});
+                const twin2= document.getElementById('nameSelecttwin2');//selectdrop down twin 2
+                let twin2name=null;
+                twin2.addEventListener('change', function(event) {twin2name = event.target.value;});
                 //checkbox 
                 let members=[];
+                
                 document.querySelectorAll('#Members input[type="checkbox"]').forEach(checkbox => {
                     checkbox.addEventListener('change', function(event) {
                         const isChecked = event.target.checked;
@@ -213,15 +256,65 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             function spliting()
             {
                 try{
-
-                
+                  
+                    const url="https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/transactionpush";
                 const expense=(document.getElementById("expense")).value;//expense
                 const date=(document.getElementById("date")).value;//date
-                
                 console.log(expense);
                 console.log(selectedname);
                 console.log(date);
                 console.log(members);
+                
+                if(mani==0)//case when there is 2 payers
+                    {
+                        console.log("worked");
+                        const twin1amount=document.getElementById("twin1").value;
+                        const twin2amount=document.getElementById("twin2").value; 
+                        console.log(twin1amount);
+
+                        if (twin1amount==null ||twin2amount==null ||twin1name==null ||twin2name==null ||members==null ||date==null ) 
+                            {
+                            alert("Enter all details");
+                            }
+                        else{
+                            console.log("worked");
+                        data={
+                            "Expense":expense,
+                            "Date":date,
+                            "Members":members,
+                            "Event":eventname,
+                            "person1":twin1name,
+                            "person1amt":twin1amount,
+                            "person2":twin2name,
+                            "person2amt":twin2amount
+                        }
+                        
+                        divide(twin1amount,members,twin1name);
+                        divide(twin2amount,members,twin2name);
+                        datapush(data,url);
+                        console.log(database);
+                        expenseadd(expense,eventname);
+                        const newdata=
+                {
+                    Tally:database,
+            Expenses:expensedetails,
+            IDetails:individualdetails
+                }
+                        updateMemberData(newdata,'https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate');
+                        alert("Data  saved successfully");
+                        jk=1;
+                        trans1();
+                        mani=0;
+                        twinftn();
+                }
+            }
+                else//case when there is 1 payer
+                {
+                    if(selectedname==null ||members==null ||date==null) 
+                        alert("Enter all details"); 
+                    else{
+
+                    
                 data={
                     "Expense":expense,
                     "Date":date,
@@ -230,13 +323,25 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                     "Event":eventname
                 };
                 console.log(data);
-                const url="https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/transactionpush"
+                
+                divide(expense,members,selectedname);
                 datapush(data,url);
                 console.log(database);
-                divide(expense,members,selectedname);
-                updateMemberData(database,'https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate');
+                expenseadd(expense,eventname);
+                const newdata=
+                {
+                    Tally:database,
+            Expenses:expensedetails,
+            IDetails:individualdetails
+                }
+                updateMemberData(newdata,'https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate');
                 alert("Data  saved successfully");
+                jk=1;
+                members=[];
+                trans1();
             }
+        }
+        }
             catch (error) {
                 alert('Error occured while saving');
             }
@@ -251,6 +356,9 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                 //console.log(database);
                 const dkeys= Object.keys(database);
                 //console.log(dkeys);
+                people.forEach(name=>{
+                    individualdetails[name]=parseFloat((individualdetails[name]+rounded).toFixed(2));
+                })
                 people.forEach(name=>{
                     if(name!=payee)
                         {
@@ -315,13 +423,32 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             }
 
 //******************************************************************************************
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('myForm').addEventListener("submit", function(event) {
+    console.log(event);
+    if(event.getElementById!==tbtn)
     event.preventDefault();
     console.log("hello thin swork") ;
-    trans1();
+   
    spliting();
     // console.log(wrapper)// Prevent the default form submission
     // Your form submission code here (e.g., AJAX request)
     // After processing the form, clear the inputs
+    if(jk==1)
     this.reset();
 });
+
+//expense adder
+function expenseadd(exp,event)
+{
+    console.log(exp);
+let ithu=parseFloat(expensedetails[event]);
+console.log(ithu);
+ithu=ithu+parseFloat(exp);
+expensedetails[event]=ithu;
+console.log(ithu);
+let ithutot=parseFloat(expensedetails["Total"]);
+ithutot=ithutot+parseFloat(exp);
+expensedetails["Total"]=ithutot;
+console.log(ithutot);
+}
+

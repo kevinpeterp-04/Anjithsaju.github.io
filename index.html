@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <h6 id="dbmsg">data base connected</h6>
     <div id="page1">
       <button type="button" class="p1" id="s1">Split Money</button>
       <button type="button" class="p1" id="v1">View Expense</button>
@@ -24,7 +23,7 @@
       </div>
     </div>
     <form id="myForm">
-      <div id="page3">
+      <div class="page3" class="page3twin">
         <div id="slide">
           <h5>Enter Expense:</h5>
           <input type="number" id="expense" placeholder="Expense" required />
@@ -52,9 +51,9 @@
           <h5>Select Date:</h5>
           <input type="date" id="date" />
         </div>
-        <div id="slide">
+        <div id="mother">
           <h5>Paid By:</h5>
-          <select id="nameSelect">
+          <select id="nameSelect" required>
             <option>none</option>
             <option>Anjith</option>
             <option>Chriswin</option>
@@ -64,7 +63,33 @@
             <option>Richol</option>
           </select>
         </div>
-
+        <div class="twin">
+          <input id="twin1" type="number" placeholder="Person1 money" />
+          <h4>Paid By:</h4>
+          <select id="nameSelecttwin1" required>
+            <option>none</option>
+            <option>Anjith</option>
+            <option>Chriswin</option>
+            <option>Adith</option>
+            <option>Kevin</option>
+            <option>Anadhakrishnan</option>
+            <option>Richol</option>
+          </select>
+        </div>
+        <div class="twin">
+          <input id="twin2" type="number" placeholder="Person2 money" />
+          <h4>Paid By:</h4>
+          <select id="nameSelecttwin2" required>
+            <option>none</option>
+            <option>Anjith</option>
+            <option>Chriswin</option>
+            <option>Adith</option>
+            <option>Kevin</option>
+            <option>Anadhakrishnan</option>
+            <option>Richol</option>
+          </select>
+        </div>
+        <button type="button" id="btwin">Single or dual</button>
         <button type="submit" id="split">Split</button>
       </div>
     </form>

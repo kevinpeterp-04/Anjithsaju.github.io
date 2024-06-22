@@ -7,8 +7,20 @@ display: flex;
     display: flex;
     align-items: center;
 }
+.twin
+{
+    /* display: flex; */
+    display: none;
+    align-items: center;
+}
+#mother
+{
+    display: flex;
+    /* display: none; */
+    align-items: center;
+}
 
-#page3
+.page3
 
 { display: flex;
     background-color: #c6e2eb;
@@ -22,7 +34,7 @@ display: flex;
     flex-direction: column;
     align-items: center;
     color: #614649;
-    height: 357px;
+    height: 374px;
 }
 
 h5{
@@ -181,10 +193,14 @@ body
         color: black;
         font-weight: 500;
     }
-    #page3
+    .page3
     {
         width:375px;
     }
+    .page3.active
+{
+    height: 430px;
+}
     #Members
     {
         font-size: 8px;
@@ -247,4 +263,14 @@ body
     background: url(other.jpg);
     background-size: cover;
     background-position: center;
+}
+.page3.active
+{
+    height: 430px;
+}
+#btwin
+{
+    background: none;
+    border: none;
+    margin: 10px;
 }
