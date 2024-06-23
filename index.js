@@ -15,7 +15,11 @@ page3.style.display="none";
 back.style.display="none";
 let bk=1;
 bt1.addEventListener("click",trans2);
-bt2.addEventListener("click",location.replace('https://anjithsaju.github.io/Expense/'));
+bt2.addEventListener("click",change);
+function change()
+{
+    location.replace('https://anjithsaju.github.io/Expense/');
+}
 back.addEventListener("click",backfn);
 let jk=0;
 let expensedetails=null;
