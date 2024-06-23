@@ -18,7 +18,7 @@ bt1.addEventListener("click",trans2);
 bt2.addEventListener("click",change);
 function change()
 {
-    location.replace('https://anjithsaju.github.io/Expense/');
+    location.replace('https://anjithsaju.github.io/Expenses/');
 }
 back.addEventListener("click",backfn);
 let jk=0;
