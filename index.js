@@ -252,7 +252,8 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                     checkbox.addEventListener('change', function(event) {
                         const isChecked = event.target.checked;
                         const memberName = event.target.nextElementSibling.innerText;
-                        isChecked ? members.push(memberName): myArray = members.filter(item => item !== memberName);
+                        isChecked ? members.push(memberName): members = members.filter(item => item !== memberName);
+                        console.log(members);
                     });});
 
 
