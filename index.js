@@ -252,7 +252,8 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                     checkbox.addEventListener('change', function(event) {
                         const isChecked = event.target.checked;
                         const memberName = event.target.nextElementSibling.innerText;
-                        isChecked ? members.push(memberName): myArray = members.filter(item => item !== memberName);
+                        isChecked ? members.push(memberName): members = members.filter(item => item !== memberName);
+                        console.log(members);
                     });});
 
 
@@ -276,7 +277,7 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
                         const twin2amount=document.getElementById("twin2").value; 
                         console.log(twin1amount);
 
-                        if (twin1amount==null ||twin2amount==null ||twin1name==null ||twin2name==null ||members==null ||date==null ) 
+                        if (twin1amount==null ||twin2amount==null ||twin1name==null ||twin2name==null ||members.length==0  ||date==null ) 
                             {
                             alert("Enter all details");
                             }
@@ -314,7 +315,7 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             }
                 else//case when there is 1 payer
                 {
-                    if(selectedname==null ||members==null ||date==null) 
+                    if(selectedname==null ||members.length==0 ||date==null) 
                         alert("Enter all details"); 
                     else{
 

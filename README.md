@@ -33,4 +33,8 @@ all your information will be saved in database
 all expenses will be updated and amounts will be automatically tallied between members
 
 
+view expenses page
+view expenses page has two block 
+first  block shows the total amount spend and the division of that amount along different fields 
+second block shows individual expenses and the money each person owes each other
 You can view the page from here:https://anjithsaju.github.io/
