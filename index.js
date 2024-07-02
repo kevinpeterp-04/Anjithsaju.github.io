@@ -133,7 +133,7 @@ function twinftn()
                 }
                 const datathis=await response.json();
                 //console.log(datathis);
-                          datapush(datathis,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
+                updateMemberData(datathis,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
                 const dataprev =datathis["DataOF"];
                 database=dataprev["Tally"];
                 expensedetails=dataprev["Expenses"];
