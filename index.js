@@ -114,7 +114,7 @@ function twinftn()
 
 //***************************************************************************************************************8 */
 //mongodb connection
-
+let dataprev=null;
 
 
         //fetching current data from database
@@ -133,8 +133,8 @@ function twinftn()
                 }
                 const datathis=await response.json();
                 //console.log(datathis);
-                updateMemberData(datathis,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
-                const dataprev =datathis["DataOF"];
+               
+                 dataprev =datathis["DataOF"];
                 database=dataprev["Tally"];
                 expensedetails=dataprev["Expenses"];
                 individualdetails=dataprev["IDetails"];
@@ -262,7 +262,7 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             function spliting()
             {
                 try{
-                  
+                    
                     const url="https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/transactionpush";
                 const expense=(document.getElementById("expense")).value;//expense
                 const date=(document.getElementById("date")).value;//date
@@ -436,7 +436,7 @@ document.getElementById('myForm').addEventListener("submit", function(event) {
     if(event.getElementById!==tbtn)
     event.preventDefault();
     console.log("hello thin swork") ;
-   
+    updateMemberData(dataprev,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
    spliting();
     // console.log(wrapper)// Prevent the default form submission
     // Your form submission code here (e.g., AJAX request)
