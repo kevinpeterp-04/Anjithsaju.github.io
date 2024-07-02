@@ -214,7 +214,7 @@ let dataprev=null;
 
 
 
-datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdatapull");
+
 
 
 
@@ -436,6 +436,7 @@ document.getElementById('myForm').addEventListener("submit", function(event) {
     if(event.getElementById!==tbtn)
     event.preventDefault();
     console.log("hello thin swork") ;
+    datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdatapull");
     updateMemberData(dataprev,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
    spliting();
     // console.log(wrapper)// Prevent the default form submission
