@@ -133,6 +133,7 @@ function twinftn()
                 }
                 const datathis=await response.json();
                 //console.log(datathis);
+                          datapush(datathis,"https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/test");
                 const dataprev =datathis["DataOF"];
                 database=dataprev["Tally"];
                 expensedetails=dataprev["Expenses"];
@@ -306,7 +307,9 @@ datafetch("https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endp
             IDetails:individualdetails
                 }
                         updateMemberData(newdata,'https://ap-south-1.aws.data.mongodb-api.com/app/splitapp-pnazqyo/endpoint/membersdataupdate');
+                
                         alert("Data  saved successfully");
+                            
                         jk=1;
                         trans1();
                         mani=0;
